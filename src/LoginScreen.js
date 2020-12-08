@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
+import HomeScreen from '../src/HomeScreen';
 
-const LoginScreen = ()=>{
+const LoginScreen = ({navigation})=>{
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
@@ -13,9 +14,10 @@ const LoginScreen = ()=>{
         }
         else{
             alert("Success")
+            navigation.navigate('Home')
         
         }
-        return;
+       
 
     }
 
