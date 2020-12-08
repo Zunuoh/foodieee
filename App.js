@@ -5,6 +5,7 @@ import LoginScreen from './src/LoginScreen';
 import HomeScreen from './src/HomeScreen';
 import DessertScreen from './src/DessertScreen';
 import ShakeScreen from './src/ShakeScreen';
+import PizzaScreen from './src/PizzaScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -56,10 +57,12 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Desert" component={DessertScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Shake" component={ShakeScreen} options={{headerShown:false}}/>
+          <Stack.Screen name="Pizza" component={PizzaScreen} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
     // <LoginScreen/>
     // <DessertScreen/>
+    // <HomeScreen/>
   );
 }
 

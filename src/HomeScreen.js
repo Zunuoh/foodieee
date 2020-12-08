@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import {Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
+import {Feather} from '@expo/vector-icons';
 
-const pizzaList=[{"id":"0", "name":"Barbecue Pizza", "image":require('../assets/Pizza/barbecuepizza.png')}, {"id":"1", "name":"Hawaiian Pizza", "image":require('../assets/Pizza/hawaianpizza.png')}, {"id":"2", "name":"Meat Lovers Pizza", "image":require('../assets/Pizza/meatlovers.png')},
-{"id":"3", "name":"Mozarellac Cheese Pizza", "image":require('../assets/Pizza/mozarellacheese.jpeg')}, {"id":"4", "name":"Peperoni Pizza", "image":require('../assets/Pizza/peperoni.png')}, {"id":"5", "name":"Veggie Supreme Pizza", "image":require('../assets/Pizza/veggiesupreme.jpeg')}]
+const restaurantList=[{"id":"0", "name":"Papas Pizza", "image":require('../assets/Restaurants/papaspizza.jpeg'), "location":"Osu, East Legon, North Legon"}, {"id":"1", "name":"Kareena Cake", "image":require('../assets/Restaurants/kareena.jpeg'), "location":"Osu"}, {"id":"2", "name":"Sub box", "image":require('../assets/Restaurants/subbox.png'), "location":"Labone"},
+{"id":"3", "name":"Shakes and Flavour", "image":require('../assets/Restaurants/shakes.jpeg'), "location":"Labone"}, {"id":"4", "name":"Bakeshop Classics", "image":require('../assets/Restaurants/bakeshop.png'), "labone":"Tse Addo, Spintex"}, {"id":"5", "name":"Eddys Pizza", "image":require('../assets/Restaurants/eddys.jpeg'), "location":"Osu, East Legon, Dansoman"}, {"id":"6", "name":"Eat by Zoe", "image":require('../assets/Restaurants/zoe.png'), "location":"Cantonments"}]
 
 const HomeScreen = ({navigation})=>{
-    const [pizzas, setPizzas] = useState(pizzaList);
+    const [restaurants, setRestaurants] = useState(restaurantList);
     return(
         <ScrollView>
         <View style={{flex:1, padding:20}}>
@@ -14,13 +15,13 @@ const HomeScreen = ({navigation})=>{
                 <Text style={{fontSize:30, color:"#EF5D5F"}}>Order & Eat.</Text>
             </View>
 
-            <View style={{paddingTop:30}}>
+            <View style={{paddingTop:20}}>
                 <Text style={{fontSize:25, color:"#EF5D5F"}}>Categories</Text>
             </View>
 
             <View style={{marginTop:20}}>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <TouchableOpacity style={{width:120, height:120, marginRight:20, borderRadius:10, borderWidth:.5, justifyContent:"center", alignItems:"center", borderColor:"#EF5D5F"}}>
+                    <TouchableOpacity style={{width:120, height:120, marginRight:20, borderRadius:10, borderWidth:.5, justifyContent:"center", alignItems:"center", borderColor:"#EF5D5F"}} onPress={()=>{navigation.navigate('Pizza')}}>
                     <Image source={require('../assets/pizza3.png')} style={{width:95, height:95, borderRadius:10}}/>
                     <Text style={{fontSize:20}}>Pizza</Text>
                     </TouchableOpacity>
@@ -35,25 +36,30 @@ const HomeScreen = ({navigation})=>{
                 </ScrollView>
             </View>
 
-            <View style={{marginTop:20}}>
-                <Text style={{fontSize:30, color:"#EF5D5F"}}>Pizza</Text>
+            <View style={{marginTop:50}}>
+                <Text style={{fontSize:25, color:"#EF5D5F"}}>PLACES YOU CAN ORDER FROM</Text>
             </View>
             
-                <View style={{flexDirection:"row", flexWrap:"wrap", paddingLeft:15}}>
-                {pizzas && pizzas.map((pizza)=>{
-                return(
-                <View style={{backgroundColor:"#EF5D5F", width:150, height:200, marginRight:10, marginTop:10, borderRadius:10}}>
-                <View style={{justifyContent:"center", alignItems:"center", marginTop:20}}>
-                <Image source={pizza.image} style={{width:95, height:95, borderRadius:10}}/>
-                </View>
-                <View style={{paddingLeft:20, paddingTop:20}}>
-                <Text style={{fontSize:20, color:"white"}}>{pizza.name}</Text>
-                <Text style={{paddingTop:5, color:"white"}}>GHC30.00</Text>
-                </View>
-                </View>
-               
-                )
-            })}
+                <View >
+            {restaurants && restaurants.map((restaurant =>{
+                 return(
+                    <View style={{width:320, height:150, marginRight:10, marginTop:10, borderBottomWidth:.5, flexDirection:"row", borderBottomColor:"#EF5D5F"}}>
+                    <View style={{ marginLeft:10,marginTop:15}}>
+                    <Image source={restaurant.image} style={{width:100, height:120, borderRadius:10}}/>
+                    </View>
+                    <View style={{paddingLeft:20, paddingTop:20}}>
+                    <Text style={{fontSize:20, color:"#EF5D5F", fontWeight:"bold"}}>{restaurant.name.toUpperCase()}</Text>
+                    <Text style={{paddingTop:5, color:"#EF5D5F", fontSize:20}}>Location:</Text>
+                    <Text style={{paddingTop:5, color:"#EF5D5F"}}>{restaurant.location}</Text>
+                    <Feather style={{marginTop:20}}
+                    name="star"
+                    color="black"
+                    size={24}/>
+                    </View>
+                    </View>
+                   
+                    )
+            }))}
              </View>
               
         </View>
