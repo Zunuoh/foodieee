@@ -55,7 +55,7 @@ export default function App() {
       <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Main" component={MainSectionTab} options={{headerShown:false}}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
-        <Stack.Screen name="Desert" component={DessertScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="Dessert" component={DessertScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Shake" component={ShakeScreen} options={{headerShown:false}}/>
           <Stack.Screen name="Pizza" component={PizzaScreen} options={{headerShown:false}}/>
       </Stack.Navigator>
@@ -63,6 +63,7 @@ export default function App() {
     // <LoginScreen/>
     // <DessertScreen/>
     // <HomeScreen/>
+    // <ShakeScreen/>
   );
 }
 

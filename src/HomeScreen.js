@@ -16,7 +16,7 @@ const HomeScreen = ({navigation})=>{
             </View>
 
             <View style={{paddingTop:20}}>
-                <Text style={{fontSize:25, color:"#EF5D5F"}}>Categories</Text>
+                <Text style={{fontSize:25, color:"black"}}>Categories</Text>
             </View>
 
             <View style={{marginTop:20}}>
@@ -25,11 +25,11 @@ const HomeScreen = ({navigation})=>{
                     <Image source={require('../assets/pizza3.png')} style={{width:95, height:95, borderRadius:10}}/>
                     <Text style={{fontSize:20}}>Pizza</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{width:120, height:120, marginRight:20, borderRadius:10, borderWidth:.5, justifyContent:"center", alignItems:"center",  borderColor:"#EF5D5F"}}>
+                    <TouchableOpacity style={{width:120, height:120, marginRight:20, borderRadius:10, borderWidth:.5, justifyContent:"center", alignItems:"center",  borderColor:"#EF5D5F"}} onPress={()=>{navigation.navigate('Shake')}}>
                     <Image source={require('../assets/shake1.jpeg')} style={{width:95, height:95, borderRadius:10}}/>
                     <Text style={{fontSize:20}}>Shakes</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{width:120, height:120, marginRight:20, borderRadius:10, borderWidth:.5, justifyContent:"center", alignItems:"center",  borderColor:"#EF5D5F"}}>
+                    <TouchableOpacity style={{width:120, height:120, marginRight:20, borderRadius:10, borderWidth:.5, justifyContent:"center", alignItems:"center",  borderColor:"#EF5D5F"}} onPress={()=>{navigation.navigate('Dessert')}}>
                     <Image source={require('../assets/dessert1.jpeg')} style={{width:95, height:95, borderRadius:10}}/>
                     <Text style={{fontSize:20}}>Dessert</Text>
                     </TouchableOpacity>
@@ -37,7 +37,7 @@ const HomeScreen = ({navigation})=>{
             </View>
 
             <View style={{marginTop:50}}>
-                <Text style={{fontSize:25, color:"#EF5D5F"}}>PLACES YOU CAN ORDER FROM</Text>
+                <Text style={{fontSize:25, color:"black"}}>PLACES YOU CAN ORDER FROM</Text>
             </View>
             
                 <View >
