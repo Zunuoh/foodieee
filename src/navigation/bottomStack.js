@@ -4,6 +4,8 @@ import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/home/home";
 import DessertScreen from "../screens/dessert/dessert";
 import ShakeScreen from "../screens/shake/shake";
+import NewOne from '../screens/new1/new1';
+import NewTwo from '../screens/new2/new2'
 
 const Tab = createBottomTabNavigator();
 
@@ -26,8 +28,8 @@ const BottomStackNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="Dessert"
-          component={DessertScreen}
+          name="NewOne"
+          component={NewOne}
           options={{
             tabBarIcon: () => (
               <Ionicons name="logo-buffer" color="black" size={24} />
@@ -35,8 +37,8 @@ const BottomStackNavigator = () => {
           }}
         />
         <Tab.Screen
-          name="Shake"
-          component={ShakeScreen}
+          name="NewTwo"
+          component={NewTwo}
           options={{
             tabBarIcon: () => (
               <Ionicons name="ios-cart" color="black" size={24} />

@@ -1,7 +1,10 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { exp } from "react-native/Libraries/Animated/src/Easing";
+import PizzaScreen from '../pizza/pizza';
+import ShakeScreen from '../shake/shake';
 
 const dessertList = [
   {
@@ -62,8 +65,9 @@ const DessertScreen = () => {
                 borderWidth: 0.5,
                 justifyContent: "center",
                 alignItems: "center",
-                borderColor: "#EF5D5F",
+                borderColor: "#EF5D5F"
               }}
+              onPress={()=>{navigation.navigate('Pizza')}}
             >
               <Image
                 source={require("../../../assets/pizza3.png")}
@@ -100,6 +104,7 @@ const DessertScreen = () => {
                 alignItems: "center",
                 borderColor: "#EF5D5F",
               }}
+              onPress={()=>{NavigationContainer.navigate('Shake')}}
             >
               <Image
                 source={require("../../../assets/dessert1.jpeg")}
@@ -128,6 +133,7 @@ const DessertScreen = () => {
                     marginRight: 10,
                     marginTop: 10,
                     borderRadius: 10,
+                    
                   }}
                 >
                   <View
